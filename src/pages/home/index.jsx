@@ -1,6 +1,19 @@
-import Display from "../../components/display/index";
 
+import Display from "../../components/display/index";
+import service from "../service/index";
+import { useEffect, useState } from "react";
 const Index = () => {
+
+   const [temperatura, setTemperatura ] = useState(0);
+
+   const verifyTemperature = () => {
+    service.get()
+    setTemperatura(service.getValue())
+
+    
+}
+
+
 
     return (
         <>
@@ -10,10 +23,12 @@ const Index = () => {
                     <div className="text-5xl text-[#454545]">
                         <p>Temperatura Local:</p>
                     </div>
+                    
+                    <Display temperatura={temperatura == null ? setTemperatura(0): temperatura } />
+              
 
-                    <Display temperatura={19} />
-
-
+                        <button className="text-white h-[8%] w-[20%] bg-[#0d86cb] flex justify-center items-center hover:bg-[#1c94da] rounded-md" onClick={verifyTemperature} >Clique</button>
+                     
                 </div>
 
 
