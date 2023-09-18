@@ -45,10 +45,10 @@ const Index = (props) => {
     return (
         <>
             {temperatura != null ?
-                <div className={styleDiv() + "h-1/6 w-4/6 rounded-lg flex justify-center items-center "}>
+                <div className={styleDiv() + "h-1/6 w-2/6 rounded-lg flex justify-center items-center "}>
                     <p className="text-5xl text-center">{props.temperatura}ºC</p>
                 </div> :
-                <div className={styleText() + "h-1/6 w-4/6 rounded-lg flex justify-center items-center "}>
+                <div className={styleText() + "h-1/6 w-2/6 rounded-lg flex justify-center items-center "}>
                     <p className="text-5xl text-center">{props.umidade}%</p>
                 </div>}
                 
